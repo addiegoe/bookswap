@@ -1,0 +1,35 @@
+body {
+	color: #184d47;
+}
+
+h2 {
+	color: #184d47;
+}
+
+td th {
+	padding: 0 15px;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 1em .5em;
+}
+
+.center {
+	text-align: center;
+}
+
+.inactive {
+ 	color: #ff0000;
+}
+
+.italicize {
+	font-style: italic;
+	font-weight: bolder;
+}
+
+.modal-header h5 {
+	color: #2A4185;
+	font-weight: bolder;
+	margin-bottom: 0px;
+}

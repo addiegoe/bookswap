@@ -1,0 +1,173 @@
+a {
+    color: #4a6185;
+}
+
+h2 {
+    color: #184d47;
+}
+
+#start a {
+    color: #17a2b8;
+}
+
+.header {
+    border-bottom: 1px solid #3b6978;
+    color: #184d47;
+}
+
+.title {
+    font-size: 133%;
+    width: 90%;
+}
+
+.user-details {
+    font-size: 12px;
+}
+
+.message-individual {
+    padding: 5px;
+}
+
+.message-individual:nth-child(even) {
+    text-align: right;
+}
+
+.message {
+    padding: 8px;
+    border-radius: 12px;
+}
+
+.message-individual:nth-child(even) .message {
+    background-color: #cbeaed;
+    padding-right: 15px;
+}
+
+.message-individual:nth-child(odd) .message {
+    background-color: #d1eaa3;
+    padding-left: 15px;
+}
+
+.arrow {
+    width: 0; 
+    height: 0; 
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+}
+
+.message-individual:nth-child(even) .arrow {
+    margin-left: auto;
+    margin-right: 12px;
+    border-bottom: 8px solid #cbeaed;
+}
+
+.message-individual:nth-child(odd) .arrow {
+    margin-left: 12px;
+    border-bottom: 8px solid #d1eaa3;
+}
+
+#resolveForm .btn{
+    border: 1px solid rgb(255,255,255,0.5);
+}
+
+.forum-card {
+    background-color: white;
+    width: 100%;
+    border: 1px solid #e4e3e3;
+    box-shadow: 1px 1px 2px #979797,
+                1px 0px 1px white;
+    border-radius: 5px;
+    margin-bottom: -5px;
+}
+
+.section {
+    border: 1px solid #588da8;
+    border-top: none;
+    padding: 20px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #f9f9f9;
+    color: #204051;
+}
+  
+.section-top {
+    margin-top: 15px;
+    padding-top: 12px;
+    padding-bottom: 6px;
+    background-color: #588da8;
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.title-icon {
+    font-size: 150%;
+    color: #8ccbbe;
+}
+
+.date {
+    color: #84a9ac;
+}
+
+.user {
+    color: #127681;
+}
+
+.thread-page-container h1{
+    padding-top: 20px;
+    font-weight: bold;
+    font-size: 275%;
+}
+
+.fa-columns {
+    font-size: 4rem;
+}
+
+#forTitle {
+    font-size:3rem;
+    margin-bottom: -8px;
+}
+
+#caption span {
+    color: #d8345f;
+}
+
+.resolved {
+    color: #93889E;
+}
+
+.create-thread-container {
+    margin: 0 auto;
+}
+
+#thread-title-input {
+    width: 100%;
+}
+
+.padding {
+    height: 15px;
+}
+
+p {
+    margin-bottom: 0px;
+}
+
+/* most styling from: https://css-tricks.com/snippets/css/simple-and-nice-blockquote-styling/*/
+blockquote {
+    background: #f9f9f9;
+    border-left: 5px solid #ccc;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+}
+
+blockquote:before {
+    color: #ccc;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+}
+
+blockquote p {
+    display: inline;
+    font-style: italic;
+}

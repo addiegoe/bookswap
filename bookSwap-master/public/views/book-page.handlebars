@@ -1,0 +1,114 @@
+<link rel="stylesheet" href="/css/book.css">
+
+<div class="py-4 bookContainer">
+    <div class="container">
+        <div class="row align-items-center mb-4 mt-0">
+            <div class="col-12 col-sm-6 mt-2 mt-sm-0 text-center text-sm-left order-sm-1">
+                <a href="javascript:history.back()">Go Back</a> &nbsp; | &nbsp;
+                <a href="/book/search">Search Again</a>
+            </div>      
+        </div>
+    </div>
+
+    <div class="mx-2">
+        <div class="row text-center text-sm-left">
+        <div class="col-12 col-sm-4 text-center">
+            <img src="{{result.thumbnail_url}}" class="coverArt">
+        </div>
+        <div class="col-12 col-sm-8 pt-2">
+            <h3>{{result.title}}</h3> by {{result.name}}
+            <hr>
+            <span id="description">{{nullDescription result.description}}</span>
+            <p><br></p>
+            <p>Genre: 
+                {{#if result.genre_name}}
+                    {{result.genre_name}}
+                {{else}}
+                    Help us set a genre for this book!
+                    <p>
+                    <form id="add-genre" action="/book/set-genre" method="POST">
+                        <input id="ol_key" name="ol_key" value="{{result.ol_key}}" hidden>
+                        <input id="book_id" name="book_id" value="{{result.book_id}}" hidden>
+                        <select name="genre" id="genre-list">
+                            {{#each genres}}
+                                <option value="{{genre_id}}">{{name}}</option>
+                            {{/each}}
+                        </select> 
+                        <input type="submit" form="add-genre" value="Add Genre">
+                    </form>
+                {{/if}}
+            </p>
+        </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-sm-4 text-center">
+                {{#if wishlist}}
+                    {{{displayButton wishlist result.book_id}}}
+                {{else}}
+                    <button type='button' class='btn btn-info text-center' id='addWishBtn' onclick='makeReq.call(null, "wishlist")'><i class="far fa-heart"></i> Add to my wishlist</button>
+                {{/if}}
+            </div>
+        </div>
+        <hr id="separation">
+        <div class="container">
+            <div class="row">
+                <div id="addForm" class="mx-auto">
+                    <label for="condition">Choose the condition of your book to trade:</label>
+                    <select name="condition" id="newCondition">
+                        <option value="3">Excellent</option>
+                        <option value="2">Good</option>
+                        <option value="1">Acceptable</option>
+                    </select>
+
+                    <input id="newTitle" value="{{result.title}}" hidden>
+                    <input id="newUser_id" value="{{user_id}}" hidden>
+                    <input id="newBook_id" value="{{result.book_id}}" hidden>
+                    <div id="points-help">
+                        <i class="material-icons">help_outline</i>
+                    </div>
+                    <button type="button" class="btn btn-primary" id="addBookBtn" onclick="makeReq.call(null, 'booklist')">Add to my book list</button>
+                    <P><div id="confirm"></div></P>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="container my-4 py-2">
+        <h4>Open Swaps for this Book:</h4>
+            Your available points: {{points}}
+            {{#if copies}}
+                {{#each copies}}
+                    <div class="row py-3 pl-4 ml-2 openSwaps">
+                        {{first_name}} {{last_name}} listed this book in {{condition_description}} condition on {{formatDate list_date}}
+                        <BR>
+                        {{#if (checkAffordability cost ../points)}}
+                            <form action="/swap/create" method="POST" class="inline-form">
+                                <input hidden {{{formatForm list_id}}} name="list_id">                                
+                                <input hidden {{{formatForm user_id}}} name="owner_id">                                
+                                <input hidden {{{formatForm cost}}} name="cost">
+                                <input hidden value=1 name="book_page">
+                                <input type="submit" value="Swap for {{cost}} points">
+                            </form>
+                        {{else}}
+                        <span> &nbsp;&nbsp; (You do not have enough points to trade for this copy) </span>
+                        {{/if}}
+                    </div>
+                    <hr>
+                {{/each}}
+            {{/if}}
+
+            {{#unless copies}}
+            <P></P>There are no available copies of this book for trade.
+            {{/unless}}
+    </div>
+</div>
+<div id="tooltip">
+    <b>Points Breakdown by Condition:</b><br>
+    Excellent = 15 Points<br>
+    Good = 10 Points<br>
+    Acceptable = 5 Points<br>
+</div>
+<script src="../scripts/addbook.js"></script>
+<script src="../scripts/books_available.js"></script>

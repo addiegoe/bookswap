@@ -1,0 +1,27 @@
+.question {
+    background-color: #1b6ca8;
+    padding:1px;
+    border-radius: 8px;
+}
+
+.question h3 {
+    color:white;
+    padding:8px 10px 3px;
+    font-size:20px;
+    font-weight:bold;
+}
+
+.question a {
+    color:#85C4A1;
+}
+
+.largeHeader{
+    color: #184d47;
+    font-size: 200%;
+    text-align:center;
+    padding:20px;
+}
+
+#question-content p {
+    margin: 5px 10px 20px;
+}

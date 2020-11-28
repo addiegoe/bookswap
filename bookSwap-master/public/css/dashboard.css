@@ -1,0 +1,172 @@
+body{
+    color: #184d47;
+}
+
+#accountHeader, h4 {
+    color: #1b6ca8;
+}
+
+/* Reference: https: //www.w3schools.com/howto/howto_js_tabs.asp*/
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+}
+    
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+    
+.tab button:hover {
+    background-color: #ddd;
+}
+    
+.tab button.active {
+    background-color: #ccc;
+}
+    
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border-top: none;
+    text-align: center;
+    width: 100%;
+}
+
+.tabcontent #swaps {
+    width: 100%;
+}
+
+.smallHeader {
+    text-transform: uppercase;
+    font-size: smaller;
+    color: #7e97a6;
+}
+
+.largeHeader {
+    font-size: 175%;
+    margin-bottom: 10px;
+    /* color: #0C4482; */
+}
+
+table, th {
+    text-align: center;
+    border: none;
+    padding: 5px;
+    border-collapse: separate;
+    border-spacing: 1em .5em;
+}
+
+/* .bordered {
+    border-bottom: 1px solid rgba(155, 155, 155, 0.5);
+} */
+
+.dashboard-top {
+    border-radius: 10px;
+}
+
+.points {
+    color: #e36387;
+    font-weight: bolder;
+    font-size: 3em;
+    padding-left: 2px;
+    line-height: 67%;
+}
+
+.sectionBottom {
+    background-color: #f9f9f9;
+    padding: 5px;
+    padding-top: 12px;
+    border-bottom:1px solid rgba(88, 141, 168, 0.33);
+}
+
+.sectionTop {
+    padding: 5px;
+    border-bottom:1px solid rgba(88, 141, 168, 0.33);
+}
+
+.sectionTop span {
+    color: #184d47;
+    font-size: 1.6rem;
+}
+
+.swap-notifications {
+    background-color: #b8e9c0;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 5px;
+    font-size: 105%;
+    margin-bottom: 10px;
+    color: black;
+    letter-spacing: 1.1px;
+    max-width: 50%;
+    box-shadow: 3px 3px gray;
+    text-align: center;
+}
+
+#notify {
+    margin-left: 5px;
+    color: red;
+    font-weight: bold;
+}
+
+.delete {
+    color: red;
+}
+
+
+.nav-arrows {
+    position: relative;
+    font-size: 2.5rem;
+}
+
+.prev {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    left: 5px;
+}
+
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    right: 5px;
+}
+
+#delete-alert-button {
+    background: none;
+    border: none;
+    display: inline;
+    float: right;
+    margin-right: 10px;
+}
+
+#delete-alert-button:focus {
+    outline: none !important;
+}
+
+.slideshow-container {
+    width: 75%;
+}
+
+.cover {
+    max-width: 150px;
+}
+
+.description {
+    font-size: 1.1rem;
+    padding: 20px;
+}
+
+.description span {
+    color: #1b6ca8;
+    font-size: 1.5rem;
+}

@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="/css/user.css">
+<div id="content" class="container">
+<h2>Search For Users   <i class="fa fa-users" aria-hidden="true"></i></h2>
+Search by:
+  <form id="search_user" action="/user/search" method="GET">
+    <input type="hidden" id="search-criteria" name="criteria" value="1">
+    <input type="hidden" id="search-content" name="content" value="">
+    <select id ="search_by">
+      <option value="1">first name</option>
+      <option value="2">last name</option>
+      <option value="3">email address</option>
+  </select>&nbsp;&nbsp;&nbsp;
+  <input id="filter" type="text" required>&nbsp;&nbsp;&nbsp;
+    <input type="submit" id="searchBtn" value="Search">
+  </form>
+  </div>
+<script src="../scripts/searchuser.js"></script>
+
